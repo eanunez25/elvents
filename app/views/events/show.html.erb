@@ -1,0 +1,9 @@
+<%= provide(:title, @event.name) %>
+<h1><%= @event.name %></h1>
+
+Event created by <%= @event.creator.username %><br>
+<% if !@event.date.nil? %>
+  Date: <%= @event.date %>
+<% else %>
+  Date is TBA
+<% end %>
