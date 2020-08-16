@@ -2,3 +2,14 @@
 
 <%= @user.username%><br>
 
+<% if @user.created_events.any? %>
+  Created events: <%= @user.created_events.count %>
+  <ol>
+    <% @created_events.each do |event| %>
+      <li><%= event.name %></li>
+    <% end %>
+  </ol>
+<% else %>
+  <%= @user.username %> has no created events.
+<% end %>
+
