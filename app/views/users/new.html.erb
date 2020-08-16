@@ -1,0 +1,10 @@
+<%= provide(:title, "Signup")%>
+<h1>New user</h1>
+<%= form_with(model: @user, local: true) do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username%>
+
+  <%= f.submit "Create account" %>
+
+<% end %>
