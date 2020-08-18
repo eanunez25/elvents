@@ -6,7 +6,7 @@
   Created events: <%= @user.created_events.count %>
   <ol>
     <% @created_events.each do |event| %>
-      <li><%= event.name %></li>
+      <li><%= event.description %></li>
     <% end %>
   </ol>
 <% else %>

@@ -1,5 +1,5 @@
-<%= provide(:title, @event.name) %>
-<h1><%= @event.name %></h1>
+<%= provide(:title, @event.description) %>
+<h1><%= @event.description %></h1>
 
 Event created by <%= @event.creator.username %><br>
 <% if !@event.date.nil? %>
