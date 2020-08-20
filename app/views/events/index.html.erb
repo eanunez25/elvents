@@ -3,6 +3,7 @@
 
 <ul>
   <% @events.each do |event| %>
-    <li><%= event.description%> by <%= event.creator.username %></li>
+    <li><a href="/events/<%= event.id %>"><%= event.description%></a> 
+    by <a href="/users/<%= event.creator.id %>"><%= event.creator.username %></a></li>
   <% end %>
 </ul>

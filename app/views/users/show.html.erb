@@ -1,6 +1,6 @@
 <%= provide(:title, @user.username) %>
 
-<%= @user.username%><br>
+<%= @user.username%><br></br>
 
 <% if @user.created_events.any? %>
   Created events: <%= @user.created_events.count %>
@@ -11,5 +11,15 @@
   </ol>
 <% else %>
   <%= @user.username %> has no created events.
+<% end %>
+<br></br>
+
+<% if @user.attended_events.any? %>
+  Attended events: <%= @user.attended_events.count %>
+  <% @attended_events.each do |event| %>
+    <li><a href="/events/<%= event.id %>"><%= event.description %></a></li>
+  <% end %>
+<% else %>
+
 <% end %>
 
