@@ -1,7 +1,8 @@
 <%= provide(:title, @event.description) %>
 <h1><%= @event.description %></h1>
 
-Event created by <a href="/users/<%= @event.creator.id %>"><%= @event.creator.username %></a><br>
+Event created by <a href="/users/<%= @event.creator.id %>">
+                  <%= @event.creator.username %></a><br>
 <% if !@event.date.nil? %>
   Date: <%= @event.date %>
 <% else %>
