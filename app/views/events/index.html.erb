@@ -1,9 +1,26 @@
 <%= provide(:title, "Events") %>
 <h1>All Events</h1>
 
-<ul>
-  <% @events.each do |event| %>
-    <li><a href="/events/<%= event.id %>"><%= event.description%></a> 
-    by <a href="/users/<%= event.creator.id %>"><%= event.creator.username %></a></li>
-  <% end %>
-</ul>
+<% unless @past.empty? %> 
+  <h3>Passed Events: <%= @past.count %></h3>
+  <ul>
+    <% @past.each do |event| %>
+      <li><a href="/events/<%= event.id %>"><%= event.description%></a> 
+      by <a href="/users/<%= event.creator.id %>"><%= event.creator.username %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no passed events</h3>
+<% end %>
+
+<% unless @upcoming.empty? %>
+  <h3>Upcoming Events: <%= @upcoming.count %></h3>
+  <ul>
+    <% @upcoming.each do |event| %>
+      <li><a href="/events/<%= event.id %>"><%= event.description%></a> 
+      by <a href="/users/<%= event.creator.id %>"><%= event.creator.username %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no upcoming events</h3>
+<% end %>
