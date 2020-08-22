@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   def self.past
     filtered_events = []
     Event.all.each do |event|
-      if event.date < Date.today
+      if event.date <= Date.today
         filtered_events << event
       end
     end
