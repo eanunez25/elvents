@@ -1,6 +1,18 @@
 <%= provide(:title, "Events") %>
 <h1>All Events</h1>
 
+<% unless @today.empty? %> 
+  <h3>Today's Events: <%= @today.count %></h3>
+  <ul>
+    <% @today.each do |event| %>
+      <li><a href="/events/<%= event.id %>"><%= event.description%></a> 
+      by <a href="/users/<%= event.creator.id %>"><%= event.creator.username %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no events today</h3>
+<% end %>
+
 <% unless @past.empty? %> 
   <h3>Passed Events: <%= @past.count %></h3>
   <ul>
